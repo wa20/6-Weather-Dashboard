@@ -2,11 +2,43 @@
 weather right dashboard 
 ======*/
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.view {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+}
+
+h3{
+    margin: 10px;
+
+}
+
+
+
+
+
+/*================================================
+
+=================================================*/
+
+
 .weekdays {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     flex-wrap: wrap;
+    margin: 10px;
+
 
 }
 
@@ -15,11 +47,11 @@ weather right dashboard
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 5vw;
-    height: 15vh;
+    width: 8rem;
+    height: 10rem;
     background: white;
     border-radius:10px;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
 
 }

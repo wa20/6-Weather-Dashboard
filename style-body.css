@@ -31,10 +31,10 @@
 
 =================================================*/
 
-@media (min-width: 750px) {
+@media (min-width: 950px) {
   .main-container {
       display: flex;
-      width: 70vw;
+      width: 75vw;
       height: 90vh;
       backdrop-filter: blur(10px);
       border-radius: 25px;
@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 950px) {
   .col-l {
       background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);
       border-radius: 25px 0px 0px 25px;
@@ -52,7 +52,7 @@
 }
 
 
-@media (min-width: 750px) {
+@media (min-width: 950px) {
   .col-r{
       background: rgba(245, 245, 245, 0.3);
       border-radius: 0px 25px 25px 0px;
@@ -66,11 +66,11 @@
 
 =================================================*/
 
-@media (max-width: 750px) {
+@media (max-width: 950px) {
 
     .main-container {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         width: 110vw;
         height: 110vh;
         backdrop-filter: blur(10px);
@@ -80,7 +80,7 @@
 }
 
 
-@media (max-width: 750px) {
+@media (max-width: 950px) {
     .col-l {
         display: flex;
         flex: 1 1 25%;
@@ -94,7 +94,7 @@
   
   
   
-  @media (max-width: 750px) {
+  @media (max-width: 950px) {
     .col-r {
         display: flex;
         flex: 1 1 75%;
