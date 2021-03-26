@@ -30,7 +30,9 @@ weather right dashboard
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* width: 40px; */
+    margin: 10px;
+    padding: 10px;
+   
 }
 
 h4{
@@ -39,19 +41,21 @@ h4{
 }
 
 
-
 .tempToggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    
 }
 
 .temp {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin: 10px;
     border-radius: 50%;
     background: black;
