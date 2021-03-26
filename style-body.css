@@ -10,6 +10,11 @@
     list-style: none;
   }
 
+  html{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
 
 
  body {
@@ -22,26 +27,82 @@
 
   }
 
+/*================================================
 
+=================================================*/
+
+@media (min-width: 750px) {
   .main-container {
       display: flex;
-      width: 150vh;
-      height: 80vh;
+      width: 70vw;
+      height: 90vh;
       backdrop-filter: blur(10px);
       border-radius: 25px;
-      background: rgba(255, 255, 255, 0.356);
+      background: transparent;
   }
+}
 
-  .col-3 {
-      background: linear-gradient(120deg, #600ee4a4, #600ee4 60%);
+@media (min-width: 750px) {
+  .col-l {
+      background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);
       border-radius: 25px 0px 0px 25px;
       backdrop-filter: blur(10px);
-
+      flex: 1 1 25%;
   }
+}
 
-  .col-9{
-      background: rgba(245, 245, 245, 0.082);
+
+@media (min-width: 750px) {
+  .col-r{
+      background: rgba(245, 245, 245, 0.3);
       border-radius: 0px 25px 25px 0px;
       backdrop-filter: blur(10px);
+      flex: 1 1 75%;
 
+  }
+}
+
+/*================================================
+
+=================================================*/
+
+@media (max-width: 750px) {
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        width: 110vw;
+        height: 110vh;
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        background: transparent;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .col-l {
+        display: flex;
+        flex: 1 1 25%;
+        background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);
+        border-radius: 0px 0px 0px 0px;
+        backdrop-filter: blur(10px);
+        /* width: 100%; */
+        
+    }
+}
+  
+  
+  
+  @media (max-width: 750px) {
+    .col-r {
+        display: flex;
+        flex: 1 1 75%;
+        background: rgba(10, 10, 10, 0.3);
+        border-radius: 0px 0px 25px 25px;
+        backdrop-filter: blur(10px);
+        /* width: 100%; */
+        
+  
+    }
   }
