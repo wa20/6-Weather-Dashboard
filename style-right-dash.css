@@ -1,3 +1,25 @@
 /* =====
 weather right dashboard 
 ======*/
+
+.weekdays {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.weekday{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 5vw;
+    height: 15vh;
+    background: white;
+    border-radius:10px;
+    margin: 5px;
+    padding: 5px;
+
+}
