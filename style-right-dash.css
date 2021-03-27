@@ -150,6 +150,15 @@ h4 {
   }
 }
 
+@media (min-width: 950px) {  
+    .day:hover{
+        width: 12rem;
+        height: 14rem;
+    }
+}
+
+
+
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
   .one,
@@ -172,6 +181,15 @@ h4 {
   }
 }
 
+@media (max-width: 949px) and (min-width: 480px) { 
+    .day:hover{
+        width: 11rem;
+        height: 13rem;
+    }
+}
+
+
+
 /* mobile view */
 @media (max-width: 479px) {
   .one,
@@ -182,8 +200,8 @@ h4 {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    width: 10em;
-    height: 12em;
+    width: 9em;
+    height: 11em;
     background: rgba(255, 255, 255, 0.596);
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -192,6 +210,17 @@ h4 {
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.212); /*box shadow edit on final colour */
   }
 }
+
+@media (max-width: 479px) {
+.day:hover{
+    width: 10rem;
+    height: 12rem;
+    }
+}
+
+
+
+
 
 /*================================================
 - main card container space
