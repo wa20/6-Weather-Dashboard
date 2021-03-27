@@ -2,25 +2,49 @@
 weather right dashboard 
 ======*/
 
+/*================================================
+- header view / C/F and week/day
+=================================================*/
+
+/* laptop view */
 @media (min-width: 950px) {
 .weather-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
  
-
     }
 }
 
-@media (max-width: 950px) {
+/* small-laptop / tablet view */
+@media (max-width: 949px) and (min-width: 480px)  {
     .weather-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100vw;
+        background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
     
         }
     }
+
+
+/* mobile view */
+@media (max-width: 479px) {
+        .weather-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
+            width: 100vw;
+        
+            }
+        }
+
+
+/*================================================
+- header view / contents
+=================================================*/
 
 
 .view {
@@ -61,10 +85,8 @@ h4{
 }
 
 
-
-
 /*================================================
-
+- weekday temp cards
 =================================================*/
 
 @media (min-width: 950px) {
