@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  ul {
+    list-style: none;
+  }
 /* =====
 weather right dashboard 
 ======*/
@@ -36,7 +46,7 @@ weather right dashboard
     align-items: center;
     justify-content: space-between;
     background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
-    width: 100%;
+    width: 100vw;
     padding: 15px;
   }
 }
@@ -93,7 +103,6 @@ h4 {
   }
 }
 
-
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
   .weekdays {
@@ -102,7 +111,7 @@ h4 {
     justify-content: center;
     flex-wrap: wrap;
     margin: 10px;
-    width: 100%;
+    width: 100vw;
   }
 }
 
@@ -114,11 +123,9 @@ h4 {
     justify-content: center;
     flex-wrap: wrap;
     margin: 10px;
-    width: 100%;
+    width: 100vw;
   }
 }
-
-
 
 /*================================================
 - weekday temperature cards - individual 
@@ -126,94 +133,101 @@ h4 {
 
 /* laptop view */
 @media (min-width: 950px) {
-    
-    .day {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 11rem;
-        height: 13rem;
-        background: rgba(255, 255, 255, 0.596);
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        margin: 10px;
-        padding: 5px;
-      }
-
+  .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 11rem;
+    height: 13rem;
+    background: rgba(255, 255, 255, 0.596);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 10px;
+    padding: 5px;
+  }
 }
-
 
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
-
-    .one, .two, .three, .four {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 9rem;
-        height: 11rem;
-        background: rgba(255, 255, 255, 0.596);
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        margin: 10px;
-        padding: 5px;
-      }
-
+  .one,
+  .two,
+  .three,
+  .four,
+  .five {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 9rem;
+    height: 11rem;
+    background: rgba(255, 255, 255, 0.596);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 10px;
+    padding: 5px;
+  }
 }
-
-
 
 /* mobile view */
 @media (max-width: 479px) {
-    .one, .two, .three, .four {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        width: 9em;
-        height: 10em;
-        background: rgba(255, 255, 255, 0.596);
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-        margin: 25px;
-        padding: 5px;
-      }
-
+  .one,
+  .two,
+  .three,
+  .four {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 9em;
+    height: 10em;
+    background: rgba(255, 255, 255, 0.596);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 25px;
+    padding: 5px;
+  }
 }
-
-
-
-
 
 /*================================================
 - main card container space
 =================================================*/
 /* laptop view */
 @media (min-width: 950px) {
-.main-cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  /* margin: 2rem; */
-  /* padding: 1rem; */
-}
+  .main-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* margin: 2rem; */
+    padding: 1rem;
+  }
 }
 
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
-
+  .main-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* margin: 2rem; */
+    /* padding: 1rem; */
+  }
 }
-
-
 
 /* mobile view */
 @media (max-width: 479px) {
-
+  .main-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    /* margin: 2rem; */
+    /* padding: 1rem; */
+  }
 }
-
 
 /*================================================
 - main cards
@@ -221,37 +235,50 @@ h4 {
 
 /* laptop view */
 @media (min-width: 950px) {
-.card {
-  display: flex;
-  align-items: center;
-  width: 28rem;
-  height: 15rem;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-    }
+  .card {
+    display: flex;
+    align-items: center;
+    width: 28vw;
+    height: 15rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
 }
-
-
 
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
-
-    .card {
-        display: flex;
-        align-items: center;
-        width: 25rem;
-        height: 10rem;
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 10px;
-          }
-
+  .card {
+    display: flex;
+    align-items: center;
+    width: 40vw;
+    height: 10rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
 }
-
-
 
 /* mobile view */
 @media (max-width: 479px) {
+ 
+    .cardOne, .cardTwo {
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    height: 15vh;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+
+    }
+
+}
+
+@media (max-width: 479px) {
+    .cardThree, .cardFour {
+
+        visibility: hidden;
+    }
 
 }

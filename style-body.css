@@ -60,7 +60,7 @@ html {
   .main-container {
     display: flex;
     width: 90vw;
-    height: 90vh;
+    height: 100%;
     backdrop-filter: blur(10px);
     border-radius: 25px;
     background: transparent;
