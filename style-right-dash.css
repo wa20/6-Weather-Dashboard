@@ -23,8 +23,6 @@ weather right dashboard
     }
 
 
-
-
 .view {
 
     display: flex;
@@ -73,7 +71,7 @@ h4{
 .weekdays {
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 10px;
 
@@ -94,8 +92,6 @@ h4{
  
 
 
-
-
 .weekday{
     display: flex;
     align-items: center;
@@ -109,3 +105,27 @@ h4{
     padding: 5px;
 
 }
+
+/*================================================
+
+=================================================*/
+
+.main-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* margin: 2rem; */
+    /* padding: 1rem; */
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    width: 30rem;
+    height: 15rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
