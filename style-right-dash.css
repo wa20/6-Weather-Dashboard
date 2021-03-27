@@ -8,124 +8,154 @@ weather right dashboard
 
 /* laptop view */
 @media (min-width: 950px) {
-.weather-header{
+  .weather-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
- 
-    }
+    width: 100%;
+  }
 }
 
 /* small-laptop / tablet view */
-@media (max-width: 949px) and (min-width: 480px)  {
-    .weather-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100vw;
-        background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
-    
-        }
-    }
-
+@media (max-width: 949px) and (min-width: 480px) {
+  .weather-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
+  }
+}
 
 /* mobile view */
 @media (max-width: 479px) {
-        .weather-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
-            width: 100vw;
-        
-            }
-        }
-
+  .weather-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
+    width: 100%;
+  }
+}
 
 /*================================================
 - header view / contents
 =================================================*/
 
-
 .view {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-    padding: 10px;
-   
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
 }
 
-h4{
-    margin: 10px;
-    color: white;
+h4 {
+  margin: 10px;
+  color: white;
 }
-
 
 .tempToggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 10px;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
 }
 
 .temp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    margin: 10px;
-    border-radius: 50%;
-    background: black;
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 50%;
+  background: black;
+  color: white;
 }
-
 
 /*================================================
 - weekday temp cards
 =================================================*/
-
+/* laptop view */
 @media (min-width: 950px) {
-.weekdays {
+  .weekdays {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 10px;
-
-    }
+    width: 100%;
+  }
 }
 
-@media (max-width: 950px) {
-    .weekdays {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 10px;
-    
-        }
-    }
 
- 
-
-
-.weekday{
+/* small-laptop / tablet view */
+@media (max-width: 949px) and (min-width: 480px) {
+  .weekdays {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 8rem;
-    height: 10rem;
-    background: white;
-    border-radius:10px;
+    flex-wrap: wrap;
     margin: 10px;
-    padding: 5px;
+    width: 100%;
+  }
+}
 
+/* mobile view */
+@media (max-width: 479px) {
+  .weekdays {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 100%;
+  }
+}
+
+
+
+
+/*================================================
+- weekday temp cards - individual 
+=================================================*/
+
+/* laptop view */
+@media (min-width: 950px) {
+    
+
+
+}
+
+
+/* small-laptop / tablet view */
+@media (max-width: 949px) and (min-width: 480px) {
+
+}
+
+
+
+/* mobile view */
+@media (max-width: 479px) {
+    
+
+}
+
+
+
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 8rem;
+  height: 10rem;
+  background: white;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
 }
 
 /*================================================
@@ -133,21 +163,20 @@ h4{
 =================================================*/
 
 .main-cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    /* margin: 2rem; */
-    /* padding: 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* margin: 2rem; */
+  /* padding: 1rem; */
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    width: 30rem;
-    height: 15rem;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: 30rem;
+  height: 15rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
 }
-
