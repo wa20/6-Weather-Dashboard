@@ -3,104 +3,122 @@ weather right dashboard
 ======*/
 
 /*================================================
+- search-bar
+=================================================*/
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-style: none;
+  border-radius: 5px 0px 0px 5px;
+  height: 40px;
+  width: 15rem;
+  padding: 10px;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  border-radius: 0px 5px 5px 0px;
+  height: 40px;
+  width: 3rem;
+}
+
+/*================================================
 - search
 =================================================*/
 
 /* laptop view */
 /* @media (min-width: 950px) { */
-    .search {
-     display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      width: 100%;
-      height: 100%;
-      padding: 2rem;
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+/* } */
 
-    }
-  /* } */
-  
-  /* small-laptop / tablet view */
-  /* @media (max-width: 949px) and (min-width: 480px) {
+/* small-laptop / tablet view */
+/* @media (max-width: 949px) and (min-width: 480px) {
     .{
      
     }
   } */
-  
-  /* mobile view */
-  /* @media (max-width: 479px) {
-    .{
-      
-    }
-  } */
 
-    /*================================================
+/* mobile view */
+@media (max-width: 479px) {
+    .search {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+/*================================================
 - current Temp - image
 =================================================*/
 
 /* @media (min-width: 950px) { */
-    .currentWeather {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: white;
-        padding: 2rem;
-    }
-  /* } */
+.currentWeather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 2rem;
+}
+/* } */
 
-  /*================================================
+/*================================================
 - 
 =================================================*/
-  
+
 /* @media (min-width: 950px) { */
-    .currentTemp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: white;
-        padding: 2rem;
-      
-    }
-  /* } */
+.currentTemp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 2rem;
+}
+/* } */
 
-
-
-
-  /*================================================
+/*================================================
 - time zone
 =================================================*/
-  
+
 @media (min-width: 950px) {
-    .dateTime {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        margin: 10px;
-        padding: 10px;
-    }
-  }
-
-
-  /* small-laptop / tablet view */
-  @media (max-width: 949px) and (min-width: 480px) {
   .dateTime {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 0px;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
   }
-  
-  /* mobile view */
-  @media (max-width: 479px) {
-    .dateTime {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 0px;
-    }
+}
+
+/* small-laptop / tablet view */
+@media (max-width: 949px) and (min-width: 480px) {
+  .dateTime {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
   }
+}
+
+/* mobile view */
+@media (max-width: 479px) {
+  .dateTime {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+  }
+}

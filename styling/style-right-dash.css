@@ -320,22 +320,6 @@ h4 {
 }
 
 /* mobile view */
-/* @media (max-width: 479px) {
- 
-    .cardOne, .cardTwo {
-    display: flex;
-    align-items: center;
-    width: 80vw;
-    height: 15vh;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 10px; */
-    /*box shadow edit on final colour */
-   
-    /* }
-
-} */
-
 @media (max-width: 479px) {
     .card {
 
