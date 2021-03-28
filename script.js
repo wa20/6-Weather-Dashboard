@@ -66,36 +66,38 @@ function oneCallApi(lat, long) {
       console.log(data.daily[0]);
 
       // weather temp today
-      document.querySelector("#currentTempDay").textContent = data.daily[0].temp.day;
-      document.querySelector("#feelsLikeDay").textContent = data.daily[0].feels_like.day;
+      document.querySelector("#currentTempDay").textContent = data.current.temp + " °C";
+      document.querySelector("#feelsLikeDay").textContent = data.current.feels_like + " °C";
+      document.querySelector("#description").textContent = data.current.weather[0].description;
 
-      document.querySelector("#currentTempEve").textContent = data.daily[0].temp.night;
-      document.querySelector("#feelsLikeEve").textContent = data.daily[0].feels_like.night;
+    //   document.querySelector("#currentTempEve").textContent = data.daily[0].temp.night;
+    //   document.querySelector("#feelsLikeEve").textContent = data.daily[0].feels_like.night;
 
      // daily temp rest of week days
-      document.querySelector("#one .temp").textContent = data.daily[1].temp.day;
-      document.querySelector("#two .temp").textContent = data.daily[2].temp.day;
-      document.querySelector("#three .temp").textContent = data.daily[3].temp.day;
-      document.querySelector("#four .temp").textContent = data.daily[4].temp.day;
-      document.querySelector("#five .temp").textContent = data.daily[5].temp.day;
-      document.querySelector("#six .temp").textContent = data.daily[6].temp.day;
+      document.querySelector("#one .temp").textContent = data.daily[1].temp.day + " °C";
+      document.querySelector("#two .temp").textContent = data.daily[2].temp.day + " °C";
+      document.querySelector("#three .temp").textContent = data.daily[3].temp.day + " °C";
+      document.querySelector("#four .temp").textContent = data.daily[4].temp.day + " °C";
+      document.querySelector("#five .temp").textContent = data.daily[5].temp.day + " °C";
+      document.querySelector("#six .temp").textContent = data.daily[6].temp.day + " °C";
+
 
       // weather icon today
-      var iconImage = document.createElement("img");
-      iconImage.setAttribute(
-        "src",
-        `http://openweathermap.org/img/w/${data.daily[0].weather[0].icon}.png`
-      );
-      document.querySelector("#one #icon").appendChild(iconImage);
+      var iconImage = document.createElement('img');
+      iconImage.setAttribute("src",`http://openweathermap.org/img/w/${data.current.weather[0].icon}.png`);
+      document.querySelector("#currentWeather").appendChild(iconImage);
 
 
 
       // rest of week weather cards icon
+      var iconImage1 = document.createElement("img");
+      iconImage1.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
+      document.querySelector("#one #icon").appendChild(iconImage1);
+
+
+
       var iconImage2 = document.createElement("img");
-      iconImage2.setAttribute(
-        "src",
-        `http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`
-      );
+      iconImage2.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
       document.querySelector("#two #icon").appendChild(iconImage2);
 
       var iconImage3 = document.createElement("img");
@@ -158,3 +160,4 @@ defaultCity ()
 
 
 document.querySelector(".searchButton").addEventListener("click", searchWeather);
+

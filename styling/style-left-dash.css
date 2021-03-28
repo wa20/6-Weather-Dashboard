@@ -29,24 +29,15 @@ weather right dashboard
 - search
 =================================================*/
 
-/* laptop view */
-/* @media (min-width: 950px) { */
 .search {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 2rem;
 }
-/* } */
 
-/* small-laptop / tablet view */
-/* @media (max-width: 949px) and (min-width: 480px) {
-    .{
-     
-    }
-  } */
 
 /* mobile view */
 @media (max-width: 479px) {
@@ -61,7 +52,7 @@ weather right dashboard
 =================================================*/
 
 /* @media (min-width: 950px) { */
-.currentWeather {
+/* .currentWeather {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,9 +60,20 @@ weather right dashboard
   height: 100%;
   background: rgba(255, 255, 255, 0.274);
   padding: 2rem;
-}
+} */
 /* } */
 
+figure.img {
+  width: 10rem
+}
+
+img{
+  width: 5rem;
+}
+
+h4 {
+  font-size: 1.5;
+}
 /*================================================
 - 
 =================================================*/
@@ -79,7 +81,7 @@ weather right dashboard
 
 .current {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   padding: 2rem;
@@ -88,7 +90,7 @@ weather right dashboard
 /* @media (min-width: 950px) { */
 .currentTemp {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   /* height: 100%; */
@@ -104,9 +106,10 @@ weather right dashboard
 @media (min-width: 950px) {
   .dateTime {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    /* align-items: center; */
     width: 100%;
+    height: 100%;
     padding: 2rem;
   }
 }

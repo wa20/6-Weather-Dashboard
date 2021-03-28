@@ -38,29 +38,30 @@
             <button class="searchButton"><i class="fas fa-search-location"></i></button>
         </label>
 
-        <figure class="currentWeather" id="currentWeather"></figure>
+        <!-- <figure class="currentWeather" id="currentWeather"></figure> -->
 
         <div class="current">
-            <h5 >Day</h5>
-            <h5 >Feels Like</h5>
+            <h5 >current</h5>
             <h5>|</h5>
-            <h5 > Night </h5>
-            <h5 > Feels Like </h5>
+            <h5> Feels Like</h5>
+            <h5>|</h5>
+            <h5 id="description"></h5>
+
         </div>
 
         <div class="currentTemp">
             <h4 id="currentTempDay"></h4>
-            <h4 id="feelsLikeDay"></h4>
             <h4>|</h4>
-            <h4 id="currentTempEve"></h4>
-            <h4 id="feelsLikeEve"></h4>
+            <h4 id="feelsLikeDay"></h4>
+            <h4> | </h4>
+            <figure class="currentWeather" id="currentWeather"></figure>
         </div>
 
         <section class="dateTime" id="dateTime">
             <h4 class="today" id="today"></h4>
             <h4> | </h4>
             <h4 class="time" id="time"></h4>
-            
+          
         </section> 
 
 </section>
@@ -74,14 +75,14 @@
                 <!-- <h4>today</h4> -->
                 <h4> This Weeks Forecast </h4>
             </section>
-            <section class="tempToggle" id="tempToggle">
+            <!-- <section class="tempToggle" id="tempToggle">
                     <div class="tempCF" id="tempC">°C</div>
                     <div class="tempCF" id="tempF">°F</div>
-            </section>
+            </section> -->
      
         </nav>
 
-    <!-- <section> -->
+   
         <ul class="weekdays">
                 <li class="day one" id="one">
                     <h5 class="weekday" id="day1"></h5>
@@ -114,10 +115,9 @@
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>
-                <!-- <li class="weekday seven" id="sun"></li>  -->
+             
         </ul>
-    <!-- </section> -->
-        <!-- <section> -->
+    
             <h3 class="highlights">Today's Highlights</h3>
             
             <ul class="main-cards">
@@ -130,8 +130,7 @@
                     <li class="card cardThree"></li>
                     <li class="card cardFour"></li>
             </ul>
-        <!-- </section> -->
-
+        
     </section>
 
 
