@@ -112,7 +112,7 @@ h4 {
   .weekdays {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     /* margin-bottom: 1rem; */
     /* margin-top: 1rem; */
@@ -125,7 +125,7 @@ h4 {
  .weekdays {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 15px;
     width: 100%;
@@ -175,14 +175,9 @@ h4 {
 }
 
 
-
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
-  .one,
-  .two,
-  .three,
-  .four,
-  .five {
+  .day {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,13 +201,9 @@ h4 {
 }
 
 
-
 /* mobile view */
 @media (max-width: 479px) {
-  .one,
-  .two,
-  .three,
-  .four {
+  .day {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,7 +281,7 @@ h4 {
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
-    margin: 2rem;
+    /* margin: 2rem; */
     padding: 1rem;
   }
 }
@@ -304,7 +295,7 @@ h4 {
   .card {
     display: flex;
     align-items: center;
-    width: 28vw;
+    width: 20vw;
     height: 15rem;
     margin: 1rem;
     padding: 1rem;

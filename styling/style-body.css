@@ -55,8 +55,8 @@ html {
 @media (min-width: 950px) {
   .main-container {
     display: flex;
-    width: 90vw;
-    height: 80%;
+    width: 70vw;
+    height: 75%;
     backdrop-filter: blur(10px);
     border-radius: 25px;
     background: transparent;
@@ -146,13 +146,20 @@ html {
     flex: 1 1 75%;
     background: rgba(97, 157, 235, 0.3);
     backdrop-filter: blur(10px);
+    border-radius: 0px 25px 25px 0px;
   }
 }
 
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
-
-
+  .col-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 1 75%;
+  }
 
 
 }

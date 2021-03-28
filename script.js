@@ -27,3 +27,6 @@ $('#day4').text(dayFour);
 
 var dayFive = moment().add(4, 'days').format("ddd");
 $('#day5').text(dayFive);
+
+var daySix = moment().add(5, 'days').format("ddd");
+$('#day6').text(daySix);
