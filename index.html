@@ -13,9 +13,9 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="./style-body.css"></link>
-    <link rel="stylesheet" href="./style-left-dash.css"></link>
-    <link rel="stylesheet" href="./style-right-dash.css"></link>
+    <link rel="stylesheet" href="./styling/style-body.css"></link>
+    <link rel="stylesheet" href="./styling/style-left-dash.css"></link>
+    <link rel="stylesheet" href="./styling/style-right-dash.css"></link>
 
     <title>Weather Dash</title>
 </head>
@@ -28,6 +28,10 @@
 
 
 <section class="col-l">
+
+        <section>
+
+        </section>
     
         <label class="search">
             <input type="search" id="search">
@@ -39,9 +43,9 @@
         <div class="currentTemp" id="currentTemp"></div>
 
         <section class="dateTime" id="dateTime">
-            <p class="today" id="today"></p>
-            <p> | </p>
-            <p class="time" id="time"></p>
+            <h4 class="today" id="today"></h4>
+            <h4> | </h4>
+            <h4 class="time" id="time"></h4>
             
         </section> 
 
@@ -52,41 +56,40 @@
     <section class="col-r">
 
         <nav class="weather-header">
-                <section class="view" id="view">
-                    <h4>today</h4>
-                    <h4>Week</h4>
-                </section>
-
                 <section class="tempToggle" id="tempToggle">
                     <div class="tempCF" id="tempC">°C</div>
                     <div class="tempCF" id="tempF">°F</div>
+                </section>
+                <section class="view" id="view">
+                    <!-- <h4>today</h4> -->
+                    <h4> This Weeks Forecast </h4>
                 </section>
         </nav>
 
 
         <ul class="weekdays">
-                <li class="day one" id="mon one">
-                    <h4 class="weekday" id="weekday"></h4>
+                <li class="day one" id="day one">
+                    <h5 class="weekday" id="day1"></h5>
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>
-                <li class="day two" id="tue two">
-                    <h4 class="weekday" id="weekday"></h4>
+                <li class="day two" id="day two">
+                    <h5 class="weekday" id="day2"></h5>
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>
-                <li class="day three" id="wed three">
-                    <h4 class="weekday" id="weekday"></h4>
+                <li class="day three" id="day three">
+                    <h5 class="weekday" id="day3"></h5>
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>
-                <li class="day four" id="thu four">
-                    <h4 class="weekday" id="weekday"></h4>
+                <li class="day four" id="day four">
+                    <h5 class="weekday" id="day4"></h5>
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>
-                <li class="day five" id="fri five">
-                    <h4 class="weekday" id="weekday"></h4>
+                <li class="day five" id="day five">
+                    <h5 class="weekday" id="day5"></h5>
                     <figure class="icon" id="icon"></figure>
                     <div class="temp"></div>
                 </li>

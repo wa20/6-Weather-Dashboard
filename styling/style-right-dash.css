@@ -21,7 +21,7 @@ weather right dashboard
   .weather-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     padding: 20px;
   }
@@ -32,7 +32,7 @@ weather right dashboard
   .weather-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
     padding: 20px;
@@ -46,7 +46,7 @@ weather right dashboard
     align-items: center;
     justify-content: space-between;
     background: rgba(128, 128, 128, 0.258); /* delete -  build visual only*/
-    width: 100%;
+    width: 100vw;
     padding: 15px;
   }
 }

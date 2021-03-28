@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 /*================================================
@@ -33,7 +31,6 @@ html {
     align-items: center;
     color: white;
     font-family: "Rubik", sans-serif;
-   
   }
 }
 
@@ -47,7 +44,6 @@ html {
     align-items: center;
     color: white;
     font-family: "Rubik", sans-serif;
-   
   }
 }
 
@@ -72,7 +68,7 @@ html {
   .main-container {
     display: flex;
     width: 90vw;
-    height: 100%;
+    height: 80%;
     backdrop-filter: blur(10px);
     border-radius: 25px;
     background: transparent;
@@ -118,7 +114,7 @@ html {
     background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);
     backdrop-filter: blur(10px);
     flex: 1 1 25%;
-     /* border-radius: 25px 0px 0px 25px; */
+    /* border-radius: 25px 0px 0px 25px; */
   }
 }
 
@@ -156,12 +152,12 @@ html {
 /* laptop view */
 @media (max-width: 950px) {
   .col-r {
-    margin: 0px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     flex: 1 1 75%;
     background: rgba(10, 10, 10, 0.3);
     /* border-radius: 0px 25px 25px 0px; */
@@ -172,8 +168,9 @@ html {
 /* small-laptop / tablet view */
 @media (max-width: 949px) and (min-width: 480px) {
   .col-r {
-    margin: 0px;
+    padding: 5px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -187,6 +184,8 @@ html {
 @media (min-width: 479px) {
   .col-r {
     display: flex;
+    justify-content: center;
+
     flex-wrap: wrap;
     background: rgba(245, 245, 245, 0.3);
     backdrop-filter: blur(10px);
