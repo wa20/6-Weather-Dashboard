@@ -110,6 +110,11 @@ html {
 /* laptop view */
 @media (min-width: 950px) {
   .col-l {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);
     backdrop-filter: blur(10px);
     flex: 1 1 25%;
@@ -121,7 +126,8 @@ html {
 @media (max-width: 949px) and (min-width: 480px) {
   .col-l {
     display: flex;
-    /* flex-direction: column; */
+    justify-content: center;
+    flex-direction: column;
     flex: 1 1 25%;
     /* margin-top: 0px; */
     background: linear-gradient(110deg, #600ee4a4, #600ee4 60%);

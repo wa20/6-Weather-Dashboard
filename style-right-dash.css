@@ -141,6 +141,7 @@ h4 {
   }
 }
 /* fix above issue box not displaying center */
+
 /*================================================
 - weekday temperature cards - individual 
 =================================================*/
@@ -237,8 +238,12 @@ h4 {
 =================================================*/
 
 .highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1.5rem;
     padding: 1rem;
+    width: 100%;
 }
 
 /*================================================
