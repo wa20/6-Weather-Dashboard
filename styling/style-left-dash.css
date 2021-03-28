@@ -67,7 +67,7 @@ weather right dashboard
   align-items: center;
   width: 100%;
   height: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.274);
   padding: 2rem;
 }
 /* } */
@@ -76,14 +76,23 @@ weather right dashboard
 - 
 =================================================*/
 
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
 /* @media (min-width: 950px) { */
 .currentTemp {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100%;
-  background: white;
+  /* height: 100%; */
+  background: rgba(255, 255, 255, 0.212);
   padding: 2rem;
 }
 /* } */
@@ -95,11 +104,10 @@ weather right dashboard
 @media (min-width: 950px) {
   .dateTime {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 10px;
-    padding: 10px;
+    padding: 2rem;
   }
 }
 

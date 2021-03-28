@@ -56,7 +56,7 @@ function searchWeather(cityName) {
 
 function oneCallApi(lat, long) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&appid=${APIKEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=metric&appid=${APIKEY}`
   )
     .then(function (response) {
       return response.json();
@@ -66,7 +66,11 @@ function oneCallApi(lat, long) {
       console.log(data.daily[0]);
 
       // weather temp today
-      document.querySelector("#currentTemp").textContent = data.daily[0].temp.day;
+      document.querySelector("#currentTempDay").textContent = data.daily[0].temp.day;
+      document.querySelector("#feelsLikeDay").textContent = data.daily[0].feels_like.day;
+
+      document.querySelector("#currentTempEve").textContent = data.daily[0].temp.night;
+      document.querySelector("#feelsLikeEve").textContent = data.daily[0].feels_like.night;
 
      // daily temp rest of week days
       document.querySelector("#one .temp").textContent = data.daily[1].temp.day;
