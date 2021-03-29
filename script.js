@@ -53,10 +53,38 @@ function searchWeather(cityName) {
 }
 
 
+//celsus vs fahrenheit
+const tempC = document.getElementById("tempC");
+const tempF = document.getElementById("tempF")
+
+var unit = 'metric';
+
+
+tempC.addEventListener("click", function (unit) {
+    if (unit === "metric") {
+      unit = "imperial";
+    } else {
+      mode = "imperial";
+    
+    }
+  });
+
+  tempF.addEventListener("click", function (unit) {
+    if (unit === "metric") {
+      unit = "imperial";
+    } else {
+      mode = "imperial";
+    
+    }
+  });
+
+
+
+
 
 function oneCallApi(lat, long) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=metric&appid=${APIKEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=${unit}&appid=${APIKEY}`
   )
     .then(function (response) {
       return response.json();
@@ -66,20 +94,20 @@ function oneCallApi(lat, long) {
       console.log(data.daily[0]);
 
       // weather temp today
-      document.querySelector("#currentTempDay").textContent = data.current.temp + " °C";
-      document.querySelector("#feelsLikeDay").textContent = data.current.feels_like + " °C";
+      document.querySelector("#currentTempDay").textContent = data.current.temp + " °";
+      document.querySelector("#feelsLikeDay").textContent = data.current.feels_like + " °";
       document.querySelector("#description").textContent = data.current.weather[0].description;
 
     //   document.querySelector("#currentTempEve").textContent = data.daily[0].temp.night;
     //   document.querySelector("#feelsLikeEve").textContent = data.daily[0].feels_like.night;
 
      // daily temp rest of week days
-      document.querySelector("#one .temp").textContent = data.daily[1].temp.day + " °C";
-      document.querySelector("#two .temp").textContent = data.daily[2].temp.day + " °C";
-      document.querySelector("#three .temp").textContent = data.daily[3].temp.day + " °C";
-      document.querySelector("#four .temp").textContent = data.daily[4].temp.day + " °C";
-      document.querySelector("#five .temp").textContent = data.daily[5].temp.day + " °C";
-      document.querySelector("#six .temp").textContent = data.daily[6].temp.day + " °C";
+      document.querySelector("#one .temp").textContent = data.daily[1].temp.day + " °";
+      document.querySelector("#two .temp").textContent = data.daily[2].temp.day + " °";
+      document.querySelector("#three .temp").textContent = data.daily[3].temp.day + " °";
+      document.querySelector("#four .temp").textContent = data.daily[4].temp.day + " °";
+      document.querySelector("#five .temp").textContent = data.daily[5].temp.day + " °";
+      document.querySelector("#six .temp").textContent = data.daily[6].temp.day + " °";
 
 
       // weather icon today
