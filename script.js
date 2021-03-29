@@ -35,6 +35,9 @@ $("#day6").text(daySix);
 
 function searchWeather(cityName) {
 
+   
+
+
   var location = document.querySelector("#search").value;
 
     fetch(
@@ -51,12 +54,15 @@ function searchWeather(cityName) {
         var long = data.coord.lon;
 
         oneCallApi(lat, long);
+
       });
 }
 
 
 
 function oneCallApi(lat, long) {
+
+
   fetch(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=metric&appid=${APIKEY}`
   )
@@ -67,13 +73,17 @@ function oneCallApi(lat, long) {
       console.log(data);
       console.log(data.daily[0]);
 
-      // weather temp today
+      // weather temp now
       document.querySelector("#currentTempDay").textContent = data.current.temp + "°";
       document.querySelector("#feelsLikeDay").textContent = data.current.feels_like + "°";
       document.querySelector("#description").textContent = data.current.weather[0].description;
 
+    // // city and country location
+    // document.querySelector("#city").textContent = data.name;
+    // document.querySelector("#country").textContent = data.sys.country;
 
-      // weather highlights today
+
+    // weather highlights today
     
     // sunrise and sunset
      var sRise = data.daily[0].sunrise
@@ -90,7 +100,9 @@ function oneCallApi(lat, long) {
      document.querySelector("#timezone").textContent = "Timezone: " + timeZone
      document.querySelector("#sunrise").textContent = "Sunrise: " + sunriseConverted
      document.querySelector("#sunset").textContent = "Sunset: " + sunsetConverted
-     
+    
+
+
 
      // sunrise and sunset
 
@@ -100,7 +112,6 @@ function oneCallApi(lat, long) {
      document.querySelector("#nightTemp").textContent = "Night: " + data.daily[0].temp.night + "°";
 
      document.querySelector("#humidity").textContent = "humidity: " + data.daily[0].humidity +"%";
-
 
 
 
@@ -125,44 +136,44 @@ function oneCallApi(lat, long) {
 
 
       // rest of week weather cards icon
-      var iconImage1 = document.createElement("img");
-      iconImage1.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
-      document.querySelector("#one #icon").appendChild(iconImage1);
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
+      document.querySelector("#one #icon").appendChild(iconImage);
 
 
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
+      document.querySelector("#two #icon").appendChild(iconImage);
 
-      var iconImage2 = document.createElement("img");
-      iconImage2.setAttribute("src",`http://openweathermap.org/img/w/${data.daily[1].weather[0].icon}.png`);
-      document.querySelector("#two #icon").appendChild(iconImage2);
-
-      var iconImage3 = document.createElement("img");
-      iconImage3.setAttribute(
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute(
         "src",
         `http://openweathermap.org/img/w/${data.daily[2].weather[0].icon}.png`
       );
-      document.querySelector("#three #icon").appendChild(iconImage3);
+      document.querySelector("#three #icon").appendChild(iconImage);
 
-      var iconImage4 = document.createElement("img");
-      iconImage4.setAttribute(
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute(
         "src",
         `http://openweathermap.org/img/w/${data.daily[3].weather[0].icon}.png`
       );
-      document.querySelector("#four #icon").appendChild(iconImage4);
+      document.querySelector("#four #icon").appendChild(iconImage);
 
-      var iconImage5 = document.createElement("img");
-      iconImage5.setAttribute(
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute(
         "src",
         `http://openweathermap.org/img/w/${data.daily[4].weather[0].icon}.png`
       );
-      document.querySelector("#five #icon").appendChild(iconImage5);
+      document.querySelector("#five #icon").appendChild(iconImage);
 
-      var iconImage6 = document.createElement("img");
-      iconImage6.setAttribute(
+      var iconImage = document.createElement("img");
+      iconImage.setAttribute(
         "src",
         `http://openweathermap.org/img/w/${data.daily[5].weather[0].icon}.png`
       );
-      document.querySelector("#six #icon").appendChild(iconImage6);
+      document.querySelector("#six #icon").appendChild(iconImage);
 
+      
     });
 }
 
@@ -171,27 +182,30 @@ function oneCallApi(lat, long) {
 
 
 
-var defaultLocation = oneCallApi(51.5085, -0.1257)
 
-function defaultCity(){
+// function defaultCity(){
 
-    var location = document.querySelector("#search").value;
 
-    if (location.length === 0 || !location.trim()) {
+//     var location = document.querySelector("#search").value;
 
-    return defaultLocation
+//     if (!location) {
 
-} else {
+//     return oneCallApi(51.5085, -0.1257)
 
-    clearInterval(oneCallApi())
+// } else if (location.length > 0) {
+
     
-    searchWeather()
 
-  }
+//     window.location.reload();
 
-}
+//     // searchWeather()
+//   }
 
-defaultCity ()
+// }
+
+// defaultCity ()
+
+
 
 
 document.querySelector(".searchButton").addEventListener("click", searchWeather);
