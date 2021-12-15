@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+
+    <link rel="stylesheet" href="./styling-update/styling.scss" />
+
+    <title>Weather Dash</title>
+  </head>
+  <body class="body">
+
+
+    <div class="ui attached inverted stackable menu navBar">
+      <div class="ui container">
+        <div class="item">
+          <p class="home icon" id="currentDay"></p>
+        </div>
+        <div class="right item">
+          <div class="ui input">
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="ui two column  stackable grid container segment">
+      
+        <div class="four wide column gridOne" style="background: beige">
+        
+        
+            <div class="ui styled accordion">
+                <div class="title active">
+                  <i class="dropdown icon"></i>
+                  Search
+                </div>
+                <div class="content active">
+                  Welcome to level 1
+                  <div class="accordion transition visible" style="display: block !important;">
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Level 1A
+                    </div>
+                    <div class="content">
+                      <p class="transition hidden">Level 1A Contents</p>
+                      <div class="accordion transition hidden">
+                        <div class="title">
+                            <i class="dropdown icon"></i>
+                            Level 1A-A
+                        </div>
+                        <div class="content">
+                            Level 1A-A Contents
+                        </div>
+                        <div class="title">
+                            <i class="dropdown icon"></i>
+                            Level 1A-B
+                        </div>
+                        <div class="content">
+                            Level 1A-B Contents
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Level 1B
+                    </div>
+                    <div class="content">
+                        Level 1B Contents
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        Level 1C
+                    </div>
+                    <div class="content">
+                        Level 1C Contents
+                    </div>
+                  </div>
+                </div>
+                
+                
+              </div>
+        
+        
+        
+        
+        
+        </div>
+        <div class="twelve wide column">
+          <div class="ui internally celled grid">
+            <div class="row">
+              <div class="sixteen wide column"></div>
+            </div>
+            <div class="row">
+              <div class="sixteen wide column"></div>
+            </div>
+          </div>
+        </div>
+  
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script2.js"></script>
+  </body>
+</html>

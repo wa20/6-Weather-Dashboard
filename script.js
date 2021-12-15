@@ -67,6 +67,7 @@ function oneCallApi(lat, long) {
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely,hourly,alerts&units=metric&appid=${APIKEY}`
   )
     .then(function (response) {
+    
       return response.json();
     })
     .then(function (data) {
