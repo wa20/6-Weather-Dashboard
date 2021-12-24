@@ -70,6 +70,7 @@ function searchCity() {
       let cardRight = document.createElement("div");
       let currentDayIcon = document.createElement("img");
       let currentDayDesc = document.createElement("h5");
+      currentDayIcon.setAttribute('class', 'imgs')
 
       //append card
       card.append(currentDayCard);
@@ -119,13 +120,14 @@ function searchCity() {
 // render weather cards
 
 function renderForecastCard(forecast) {
-   let cardDate = forecast.dt
-  let date = moment.unix(cardDate).format('ddd Do ')
-  console.log('date: ', date)
+  let cardDate = forecast.dt;
+  let date = moment.unix(cardDate).format("ddd Do ");
+  console.log("date: ", date);
   let temp = Math.round(forecast.temp.day) + "°";
+  let nightTemp = Math.round(forecast.temp.night) + "°";
   let feelsLike = Math.round(forecast.feels_like.day) + "°";
-  console.log('forecast feels like: ', feelsLike)
-  let uvi = forecast.uvi
+  console.log("forecast feels like: ", feelsLike);
+  let uvi = forecast.uvi;
 
   //current weather icon
   let weatherIcon = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
@@ -140,41 +142,57 @@ function renderForecastCard(forecast) {
   //forecast cards, element variables
   let cards = document.createElement("div");
   let content = document.createElement("div");
+  let cardTitle = document.createElement("h5");
   let forecastTemp = document.createElement("p");
-  let forecastFeelsLike = document.createElement('p');
-  let forecastUviCon = document.createElement('div');
-  let forecastUvi = document.createElement('p');
-  let forecastSun = document.createElement('p');
- 
+  let forecastNight = document.createElement("p");
+  let forecastFeelsLike = document.createElement("p");
+  let forecastUviCon = document.createElement("div");
+  let forecastUvi = document.createElement("p");
+  let forecastSun = document.createElement("p");
+
+  //icon
+  let icon = document.createElement("img");
+  let iconDesc = document.createElement("p");
+
+  icon.setAttribute("src", weatherIcon);
+  icon.setAttribute("alt", weatherIconDescription);
+  // iconDesc.textContent = `${weatherIconDescription}`;
 
   //set attributes
   cards.setAttribute("class", "ui raised link card");
   content.setAttribute("class", "content");
 
-  
-  
-
   //append to dom
-  forecastTemp.textContent = `Temp: ${temp}`;
-  forecastFeelsLike.textContent = `Feels Like: ${feelsLike}`
+  cardTitle.textContent = `${date}  | `;
+  cardTitle.append(icon)
+  forecastTemp.textContent = `Day: ${temp}`;
+  forecastFeelsLike.textContent = `Day Feels Like: ${feelsLike}`;
+  forecastNight.textContent = `Night ${nightTemp}`;
   forecastSun.textContent = `Sunrise:${sunrise}  |  Sunset:${sunset}`;
-  
-  forecastUviCon.textContent = 'UV Index: '
-  forecastUvi.textContent = ` ${uvi}`
 
-if(uvi < 3){
-    forecastUvi.setAttribute('class', 'ui green icon button tiny')
-  }else if(uvi > 3 && uvi < 7){
-    forecastUvi.setAttribute('class', 'ui orange icon button tiny')
+  icon.textContent = `${weatherIconDescription} | ${weatherIcon}`;
+
+  forecastUviCon.textContent = "UV Index: ";
+  forecastUvi.textContent = ` ${uvi}`;
+
+  if (uvi < 3) {
+    forecastUvi.setAttribute("class", "ui green icon button tiny");
+  } else if (uvi > 3 && uvi < 7) {
+    forecastUvi.setAttribute("class", "ui orange icon button tiny");
   } else {
-    forecastUvi.setAttribute('class', 'ui red icon button tiny')
+    forecastUvi.setAttribute("class", "ui red icon button tiny");
   }
 
-
-
   cards.append(content);
-  forecastUviCon.append(forecastUvi)
-  content.append(forecastTemp, forecastFeelsLike, forecastUviCon, forecastSun);
+  forecastUviCon.append(forecastUvi);
+  content.append(
+    cardTitle,
+    // icon,
+    forecastTemp,
+    forecastFeelsLike,
+    forecastNight,
+    forecastUviCon
+  );
 
   //append to dom
 
