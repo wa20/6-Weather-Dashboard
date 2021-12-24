@@ -2,19 +2,28 @@ $(document).ready(function () {
   $(".ui.accordion").accordion();
 
   $("#currentDayTime").text(moment().format("ddd MMM Do: h:mm a"));
+
+  
 });
 
-var APIKEY = "1796df8da846bd0a206835c82791ce43";
+// var APIKEY = "1796df8da846bd0a206835c82791ce43";
+var APIKEY = "5852465c3a5a6930a12f2ddde19ed235";
 var searchHistory = [];
-
-// Add timezone plugins to day.js
 
 const currentDayEl = document.querySelector("#currentDay");
 const currentDayIconEl = document.querySelector("#currentDayIcon");
+const forecastCardEl = document.querySelector('#forecastCard')
+const forecastEl = document.querySelector('#forecasts')
+const searchHistoryEl = document.querySelector("#searchHistory")
 
 //=====================================================================================================
 
-function currentWeather(city, data) {}
+function saveSearch() {
+
+searchHistoryEl.innerHTML = '';
+
+
+}
 
 //=====================================================================================================
 //search city function
@@ -25,6 +34,7 @@ function searchCity() {
 
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${APIKEY}`
+    
   )
     .then(function (response) {
       return response.json();
@@ -33,69 +43,144 @@ function searchCity() {
       console.log("api data:", data);
 
       //current weather, weather variables
+
+      let today = moment().format("ddd MMM Do");
       let city = data.name; console.log("city: ", city);
       let currentTempC = Math.round(data.main.temp) + "°"; console.log("temp: ", currentTempC);
       let currentFeelsLike =  Math.round(data.main.feels_like) + "°"
       let currentMaxTemp = Math.round(data.main.temp_max) + "°" ;
       let currentHumidity = data.main.humidity;
-      let CurerntIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-      // let currentSunrise = new Date(sRise * 1000).toLocaleTimeString([], {timeStyle: 'short'});
-      // let currentSunset = new Date(sSet,).toLocaleTimeString([], {timeStyle: 'short'})
 
+      //current weather icon
+      let weatherIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+      let weatherIconDescription = data.weather[0].description;
+
+
+      //sunrise and sunset
+      let sRise = data.sys.sunrise
+      let currentSunrise = moment.unix(sRise).format('HH:mm')
+      let sSet = data.sys.sunset
+      let currentSunset = moment.unix(sSet).format('HH:mm')
+      
       //current weather, element variables
       let card = document.createElement("div");
       let currentDayCard = document.createElement("div");
-      let currentDayCity = document.createElement("h2");
+      let currentDayCity = document.createElement("h3");
       let currentDayTemp = document.createElement('p')
-      let currentDayFeelsLike = document.createElement('p')
       let currentDayMaxTemp = document.createElement('p')
       let currentDayHumidity = document.createElement('p')
-      let currentDayIcon = document.createElement('img')
+      let currentDaySunrise = document.createElement('p')
 
-    
+      //current icon
+      let cardRight = document.createElement('div')
+      let currentDayIcon = document.createElement('img')
+      let currentDayDesc = document.createElement('h5')
 
       //append card
       card.append(currentDayCard);
-
-      currentDayCity.textContent = `${city}`;
-      currentDayTemp.textContent = 'Temp: ' + currentTempC
-      currentDayFeelsLike.textContent = 'Feels Like: ' + currentFeelsLike
+      currentDayCity.textContent = `${city} | ${today}`  ;
+      currentDayTemp.textContent = 'Temp: ' + currentTempC + " | " + 'Feels Like: ' + currentFeelsLike
       currentDayMaxTemp.textContent = 'Max Temp: ' + currentMaxTemp
+      currentDaySunrise.textContent = 'Sunrise: ' + currentSunrise  + " | " + 'Sunset: ' + currentSunset   
       currentDayHumidity.textContent = 'Humidity: ' + currentHumidity
+      currentDayCard.append(currentDayCity, currentDayTemp, currentDayMaxTemp, currentDayHumidity, currentDaySunrise);
 
-      
-      currentDayCard.append(currentDayCity, currentDayTemp, currentDayFeelsLike, currentDayMaxTemp, currentDayHumidity);
+      //append image
+      cardRight.setAttribute('class', 'flexbox')
+      currentDayIcon.setAttribute('src', weatherIcon);
+      currentDayIcon.setAttribute('alt', weatherIconDescription);
+      currentDayDesc.textContent = weatherIconDescription;
+      cardRight.append(currentDayDesc, currentDayIcon)
 
-      //append attributes
+      //append attributes left col
       currentDayEl.innerHTML = "";
       currentDayEl.append(card);
 
+      //append attributes right col
+      currentDayIconEl.innerHTML = "";
+      currentDayIconEl.append(cardRight)
+
+
+
+
+      //start weather api
       let lat = data.coord.lat;
       let lon = data.coord.lon;
 
       renderWeather(lat, lon);
+      // searchCity(city)
       
+    }).catch(function (err) {
+      console.error(err);
     });
 }
 
 //=====================================================================================================
-// render current weather
+// render weather cards
+
+
+
+function renderForecastCard(forecast){
+
+  let temp = Math.round(forecast.temp.day ) + "°"
+
+  //forecast cards, element variables
+  let cards = document.createElement('div')
+  let content = document.createElement('div')
+  let forecastTemp = document.createElement('p')
+
+
+
+  //set attributes
+  cards.setAttribute('class', 'ui raised link card')
+  content.setAttribute('class', 'content')
+  
+
+  //append to dom
+  forecastTemp.textContent = `Temp: ${temp}`
+  cards.append(content)
+  content.append(forecastTemp)
+
+  //append to dom
+  // forecastEl.innerHTML = ""
+  forecastEl.append(cards)
+
+}
+
 
 function renderWeather(lat, lon) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${APIKEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${APIKEY}`
+  
   )
     .then(function (response) {
       return response.json();
+
     })
     .then(function (data) {
       console.log("data two: ", data);
 
-      // current day weather variables
+     
+    //current weather, element variables
+    let forecastContainer = document.createElement('div');
+    let forecastHeading = document.createElement('h3');
 
-      const tempC = data.current.temp;
+    //append element
+    forecastHeading.textContent = 'Daily Forecast: '
+    forecastContainer.append(forecastHeading)
 
-      console.log("tempC", tempC);
+    //append to dom
+    forecastCardEl.innerHTML = ""
+    forecastCardEl.append(forecastContainer)
+    
+    for(var i = 0; i < data.daily.length; i++){
+
+      console.log('for loop data: ', data.daily[i])
+      renderForecastCard(data.daily[i])
+    }
+      
+    }).catch(function (err) {
+      console.error(err);
     });
 }
 

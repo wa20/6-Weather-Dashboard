@@ -25,6 +25,14 @@ ul {
 
 
 
-.gridOne{
+.flexbox, .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+}
+
+img {
+  width: 100px;
 }
