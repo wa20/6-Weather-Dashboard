@@ -6,18 +6,54 @@ $(document).ready(function () {
 
 // var APIKEY = "1796df8da846bd0a206835c82791ce43";
 var APIKEY = "5852465c3a5a6930a12f2ddde19ed235";
-var searchHistory = [];
+var searchHistoryArray = [];
 
 const currentDayEl = document.querySelector("#currentDay");
 const currentDayIconEl = document.querySelector("#currentDayIcon");
 const forecastCardEl = document.querySelector("#forecastCard");
 const forecastEl = document.querySelector("#forecasts");
 const searchHistoryEl = document.querySelector("#searchHistory");
+const searchHistoryItem = document.querySelector("#searchbtn").value
 
 //=====================================================================================================
 
 function saveSearch() {
+  
+  //clear data in search history area
   searchHistoryEl.innerHTML = "";
+
+  //create a button containing last searched item and out it at the back of the array
+  for (var i = searchHistoryArray.length - 1; i >= 0; i--) {
+    const searchBtn = document.createElement("button");
+    searchBtn.setAttribute("class", "fluid ui button");
+    searchBtn.setAttribute("style", "margin-top: 5%");
+    searchBtn.setAttribute('id', 'submitbtn')
+
+    searchBtn.setAttribute("data-search", searchHistoryArray[i]);
+    searchBtn.textContent = searchHistoryArray[i];
+    searchHistoryEl.append(searchBtn);
+  }
+}
+
+function updateSearchHistory(location){
+
+  if(searchHistoryArray.indexOf(location) !== -1){
+    return
+  }
+  searchHistoryArray.push(location);
+
+  localStorage.setItem('search-history', JSON.stringify(searchHistoryArray));
+  saveSearch()
+}
+
+
+function getSearch(){
+
+  let savedSearch = localStorage.getItem('search-history');
+  if(savedSearch){
+    searchHistoryArray = JSON.parse(savedSearch)
+  }
+  saveSearch()
 }
 
 //=====================================================================================================
@@ -70,7 +106,7 @@ function searchCity() {
       let cardRight = document.createElement("div");
       let currentDayIcon = document.createElement("img");
       let currentDayDesc = document.createElement("h5");
-      currentDayIcon.setAttribute('class', 'imgs')
+      currentDayIcon.setAttribute("class", "imgs");
 
       //append card
       card.append(currentDayCard);
@@ -110,6 +146,10 @@ function searchCity() {
 
       renderWeather(lat, lon);
       // searchCity(city)
+
+      updateSearchHistory(location)
+
+
     })
     .catch(function (err) {
       console.error(err);
@@ -164,7 +204,7 @@ function renderForecastCard(forecast) {
 
   //append to dom
   cardTitle.textContent = `${date}  | `;
-  cardTitle.append(icon)
+  cardTitle.append(icon);
   forecastTemp.textContent = `Day: ${temp}`;
   forecastFeelsLike.textContent = `Day Feels Like: ${feelsLike}`;
   forecastNight.textContent = `Night ${nightTemp}`;
@@ -233,4 +273,7 @@ function renderWeather(lat, lon) {
     });
 }
 
+getSearch()
 document.querySelector("#submit").addEventListener("click", searchCity);
+
+
