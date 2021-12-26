@@ -13,7 +13,7 @@ const currentDayIconEl = document.querySelector("#currentDayIcon");
 const forecastCardEl = document.querySelector("#forecastCard");
 const forecastEl = document.querySelector("#forecasts");
 const searchHistoryEl = document.querySelector("#searchHistory");
-const searchHistoryItem = document.querySelector("#searchbtn").value
+// const searchHistoryItem = document.querySelector("#submit").value
 
 //=====================================================================================================
 
@@ -22,12 +22,12 @@ function saveSearch() {
   //clear data in search history area
   searchHistoryEl.innerHTML = "";
 
-  //create a button containing last searched item and out it at the back of the array
+  //create a button containing last searched item and put it at the back of the array
   for (var i = searchHistoryArray.length - 1; i >= 0; i--) {
     const searchBtn = document.createElement("button");
     searchBtn.setAttribute("class", "fluid ui button");
     searchBtn.setAttribute("style", "margin-top: 5%");
-    searchBtn.setAttribute('id', 'submitbtn')
+    searchBtn.setAttribute('id', 'submitAgain')
 
     searchBtn.setAttribute("data-search", searchHistoryArray[i]);
     searchBtn.textContent = searchHistoryArray[i];
@@ -56,14 +56,17 @@ function getSearch(){
   saveSearch()
 }
 
+
 //=====================================================================================================
 //search city function
-function searchCity() {
-  const location = document.querySelector("#search").value;
-
-  console.log(location);
+function searchCity(location) {
+  if (!location){
+    location = document.querySelector("#search").value;
+  }
+  console.log(`Can you send me the ${location}`);
 
   fetch(
+   
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${APIKEY}`
   )
     .then(function (response) {
@@ -263,7 +266,7 @@ function renderWeather(lat, lon) {
       forecastCardEl.append(forecastContainer);
       forecastEl.innerHTML = "";
 
-      for (var i = 0; i < data.daily.length; i++) {
+      for (var i = 1; i < data.daily.length; i++) {
         console.log("for loop data: ", data.daily[i]);
         renderForecastCard(data.daily[i]);
       }
@@ -273,7 +276,24 @@ function renderWeather(lat, lon) {
     });
 }
 
-getSearch()
-document.querySelector("#submit").addEventListener("click", searchCity);
+//=====================================================================================================
+// render search history using event handler
 
+
+function clickSearchHistory(event){
+
+  let searchHistoryBtn = event.target
+  let searchLoaction = searchHistoryBtn.getAttribute('data-search')
+  console.log('click search', searchLoaction)
+  
+  searchCity(searchLoaction)
+
+  
+
+}
+
+
+getSearch()
+//document.querySelector("#submit").addEventListener("click", searchCity);
+searchHistoryEl.addEventListener("click", clickSearchHistory);
 

@@ -36,3 +36,15 @@ ul {
 .imgs {
   width: 100px;
 }
+
+.backgroundImg{
+  background: url(/assets/sky.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+body {
+  /* background:rgb(27, 27, 27); */
+  background: rgb(224, 224, 224);
+}
+
